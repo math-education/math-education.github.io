@@ -144,11 +144,14 @@
         $(document).ready(function () {
             $('#conclusion').hide()
             $('#bb1').click((e) => {
-                if ($('#cc1').val() == 500000) {
-                    $('#rr1').html(`<p class="text-success">Correct answer</p>`)
-                } else {
-                    $('#rr1').html(`<p class="text-danger">Wrong anwser</p>`)
-                }
+                $('#rr1').html(``)
+                window.setTimeout(() => {
+                    if ($('#cc1').val() == 500000) {
+                        $('#rr1').html(`<p class="text-success">Correct answer</p>`)
+                    } else {
+                        $('#rr1').html(`<p class="text-danger">Wrong anwser</p>`)
+                    }
+                })
             })
         })
     </script>

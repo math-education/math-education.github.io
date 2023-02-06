@@ -198,24 +198,29 @@
         $(document).ready(function () {
             $('#conclusion').hide()
             $('#bb1').click((e) => {
-                if ($('#cc1').val() == 1200000) {
-                    $('#rr1').html(`<p class="text-success">Correct answer</p>`)
-                } else {
-                    $('#rr1').html(`<p class="text-danger">Wrong anwser</p>`)
-                }
+                $('#rr1').html(``)
+                window.setTimeout(() => {
+                    if ($('#cc1').val() == 1200000) {
+                        $('#rr1').html(`<p class="text-success">Correct answer</p>`)
+                    } else {
+                        $('#rr1').html(`<p class="text-danger">Wrong anwser</p>`)
+                    }
+                }, 100)
             })
 
             $('#dr2').hide()
             $('#bb2').click((e) => {
-                if ($("input[type='radio'][name='gridRadios']:checked").val() == 'option2') {
-                    $('#rr2').html(`<p class="text-success">Correct answer</p>`)
-                    $('#dr2').show()
-
-                } else {
-                    $('#dr2').hide()
-                    $('#rr2').html(`<p class="text-danger">Wrong anwser</p>`)
-                }
-
+                $('#rr2').html(``)
+                $('#dr2').hide()
+                window.setTimeout(() => {
+                    if ($("input[type='radio'][name='gridRadios']:checked").val() ==
+                        'option2') {
+                        $('#rr2').html(`<p class="text-success">Correct answer</p>`)
+                        $('#dr2').show()
+                    } else {
+                        $('#rr2').html(`<p class="text-danger">Wrong anwser</p>`)
+                    }
+                })
             })
         })
     </script>
